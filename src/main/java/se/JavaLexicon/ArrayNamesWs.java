@@ -2,9 +2,13 @@ package se.JavaLexicon;
 
 public class ArrayNamesWs {
 
-    private static String[] names = new String[4];
+    //skapar en array med plats för 4 namn
+    private static final String[] names = new String[4];
+
+   //
     private static int index =0;
 
+    //huvudmetod
     public static void main (String[] args) {
         addName ("Nicklas Soderman");
         addName ("Jeanette Soderman");
@@ -13,20 +17,21 @@ public class ArrayNamesWs {
 
     printNames();
     }
-
+    //lägger till ett namn i arrayen
     private static void addName (String fullName) {
+        // kollar om array är full
         if (index >= names.length) {
             System.out.println("The Array is full, can not add more names");
-            return;
+            return; // avslutar
         }
-        names[index] = fullName;
+        names[index] = fullName; // lägger in namnet i arrayen
         index++;
     }
-
+    // skriver ut alla namn i arrayen
     private static void printNames() {
-        for (String name : names) {
-            if (name != null) {
-                System.out.println (name);
+        for (String name : names) { //loopar igenom arrayen
+            if (name != null) { //kollar om namnet inte är null
+                System.out.println (name); //skriver ut namnet
             }
         }
     }
